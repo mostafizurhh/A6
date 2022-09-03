@@ -31,6 +31,7 @@
 </head>
 
 <body class="container">
+    <!-- header -->
     <header>
         <!-- nav bar -->
         <nav class="navbar navbar-expand-lg bg-light">
@@ -60,25 +61,40 @@
         </nav>
         <hr>
     </header>
+    <!-- main part -->
     <main>
         <section>
             <!-- load news categories -->
-            <div id="newsCategories" class="d-flex flex-row mb-3 justify-content-around flex-wrap p-1">
+            <div id="newsCategories" class="d-flex flex-row mt-3 mb-3 justify-content-around flex-wrap p-1">
             </div>
-            <!-- load individual categorie -->
+            <!-- load Spinner -->
+            <div id="loader" class="text-center d-none mt-3">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <!-- show total items for individual categorie -->
+            <input id="inputField" type="text" class="form-control mb-3">
+            <!-- load individual categorie's all news -->
             <div id="individualCategorie" class="card border border-0" data-bs-toggle="modal"
                 data-bs-target="#detailInfoModal">
             </div>
             <!-- Modal -->
             <div class="modal fade" id="detailInfoModal" tabindex="-1" aria-labelledby="detailInfoModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="detailInfoModalLabel"></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div id="modalDetail" class="modal-body">
 
                         </div>
                         <div class="modal-footer">
