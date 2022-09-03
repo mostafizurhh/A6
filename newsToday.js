@@ -42,15 +42,18 @@ const displayIndividualCategory = categories => {
                     <div class="card-body">
                         <h5 class="card-title">${categorie.title}</h5>
                         <p class="card-text overflow">${categorie.details}</p> 
-                        <div class="bg-warning mt-5">
+                        <div class="bg-light mt-5 d-flex p-2  align-items-center justify-content-between">
                             <div style="height: 70px;">
                                 <img class ="img-fluid mh-100 rounded-circle" src="${categorie.author.img}">
                             </div>
                             <div>
-
+                                <p class="ps-2 m-0">${categorie.author.name ? categorie.author.name : 'No Author'}
+                                <p class="ps-2 m-0">${categorie.author.published_date ? categorie.author.published_date.slice(0, 10) : 'No Info'}
                             </div>
-                      
-                        </div>
+                            <div>
+                                <p>View: ${categorie.total_view ? categorie.total_view : 'No Data Available'}</p>
+                            </div>
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -59,4 +62,5 @@ const displayIndividualCategory = categories => {
         individualCategorieContainer.appendChild(individualCategorieDiv);
     })
 }
+
 loadAllNewsCategories()
