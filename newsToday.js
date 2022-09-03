@@ -49,18 +49,27 @@ const displayIndividualCategory = categories => {
         <div class="row" onclick="loadNewsDetail('${categorie._id}')">
             <div class="border rounded mb-3 pt-3 pb-3 d-flex shadow">
                 <div class="col-md-3 col-5">
-                    <img src="${categorie.image_url}" class="img-fluid h-100 rounded" alt="..">
+                    <img src="${categorie.thumbnail_url}" class="img-fluid h-100 rounded" alt="..">
                 </div>
                 <div class="col-md-9 col-7 ps-4">
-                    <div class="card-body p-0">
+                    <div class="card-body p-0 d-flex flex-column">
+                        <div class="mb-5">
                         <h5 class="card-title">${categorie.title}</h5>
-                        <p class="card-text overflow">${categorie.details}</p> 
+                        <p class="card-text overflow mb-3">${categorie.details}</p> 
+                        </div>
                         <div class="mt-5 d-flex align-items-center justify-content-between justify-content-center">
                             <div class="d-flex align-items-center justify-content-center">
                                 <div>
                                     <img  style="height: 70px;" class ="img-fluid mh-100 rounded-circle" src="${categorie.author.img}">
                                     <p class="text-capitalize">${categorie.author.name ? categorie.author.name : 'Unknown'}</p>
                                 </div>    
+                            </div>
+                            <div class="opacity-75 ms-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
                             </div>
                             <div class="ps-3 pe-3">
                                 <i class="fa-regular fa-eye"></i>
@@ -90,12 +99,17 @@ const loadNewsDetail = (_id) => {
 const displayNewsDetails = categories => {
     console.log(categories)
     categories.forEach(categorie => {
+        console.log(categorie)
         const modaltitle = document.getElementById('detailInfoModalLabel')
         modaltitle.innerHTML = `${categorie.title}`
         const modalBody = document.getElementById('modalDetail')
         modalBody.innerHTML = `
         <img class="img-fluid" src="${categorie.image_url}">
+        <img  style="height: 70px;" class ="img-fluid mh-100 rounded-circle mt-3" src="${categorie.author.img}">
         <p class="fw-bold p-1 text-capitalize">Author: ${categorie.author.name ? categorie.author.name : 'No Author'}</p>
+        <p class="fw-semibold m-0 p-0">${categorie.author.published_date ? categorie.author.published_date : 'No Info'}</p>
+        <p class="m-0 p-0"><b>Rating:</b> ${categorie.rating.number ? categorie.rating.number : 'No Info'}</p>
+        <p class="m-0 p-0 fw-semibold">${categorie.rating.badge ? categorie.rating.badge : 'No Info'}</p>
         <p class="mt-3">${categorie.details}</p>
         `
     })
