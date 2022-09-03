@@ -47,12 +47,12 @@ const displayIndividualCategory = categories => {
         const individualCategorieDiv = document.createElement('div');
         individualCategorieDiv.innerHTML = `
         <div class="row" onclick="loadNewsDetail('${categorie._id}')">
-            <div class="border rounded mb-3 pt-2 pb-2 d-flex shadow">
+            <div class="border rounded mb-3 pt-3 pb-3 d-flex shadow">
                 <div class="col-md-3 col-5">
                     <img src="${categorie.image_url}" class="img-fluid h-100 rounded" alt="..">
                 </div>
-                <div class="col-md-9 col-7">
-                    <div class="card-body">
+                <div class="col-md-9 col-7 ps-4">
+                    <div class="card-body ">
                         <h5 class="card-title">${categorie.title}</h5>
                         <p class="card-text overflow">${categorie.details}</p> 
                         <div class="mt-5 d-flex align-items-center justify-content-between justify-content-center">
@@ -62,8 +62,9 @@ const displayIndividualCategory = categories => {
                                     <p class="text-capitalize">${categorie.author.name ? categorie.author.name : 'Unknown'}</p>
                                 </div>    
                             </div>
-                            <div>
-                                <p>View: ${categorie.total_view ? categorie.total_view : 'No Views'}</p>
+                            <div class="ps-3">
+                                <i class="fa-regular fa-eye"></i>
+                                <p>${categorie.total_view ? categorie.total_view : '0'}</p>
                             </div>
                         </div>  
                     </div>
