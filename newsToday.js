@@ -65,11 +65,11 @@ const displayIndividualCategory = categories => {
                                 </div>    
                             </div>
                             <div class="opacity-75 ms-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star-half-stroke"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star-half-stroke"></i>
                             </div>
                             <div class="ps-3 pe-3">
                                 <i class="fa-regular fa-eye"></i>
@@ -125,4 +125,5 @@ const toggleSpinner = isLoading => {
         spinner.classList.add('d-none');
     }
 }
+
 loadAllNewsCategories()
