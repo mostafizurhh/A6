@@ -18,7 +18,6 @@ const displayAllNewsCategories = categories => {
     `
         newsCategoriesContainer.appendChild(singleCategorie);
     });
-
 }
 
 /******************** display individual category's all news *********************/
@@ -33,7 +32,14 @@ const loadIndividualCategory = (id) => {
 }
 const displayIndividualCategory = categories => {
     console.log(categories)
+    /* show total items of a categorie */
+    const formControl = document.getElementById('inputField')
+    formControl.value = `Total ${categories.length} items found`
+
+    /* show alert if any category has no data */
     if (categories.length === 0) { alert('No data Available'); }
+
+    /* show all news of a category */
     const individualCategorieContainer = document.getElementById('individualCategorie');
     individualCategorieContainer.innerHTML = '';
     categories.forEach(categorie => {
