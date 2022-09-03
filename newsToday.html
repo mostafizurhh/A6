@@ -65,7 +65,7 @@
     <main>
         <section>
             <!-- load news categories -->
-            <div id="newsCategories" class="d-flex flex-row mt-3 mb-3 justify-content-around flex-wrap p-1">
+            <div id="newsCategories" class="d-flex flex-row mt-3 mb-3 justify-content-between flex-wrap p-1">
             </div>
             <!-- load Spinner -->
             <div id="loader" class="text-center d-none mt-3">
@@ -81,8 +81,15 @@
             </div>
             <!-- show total items for individual categorie -->
             <input id="inputField" type="text" class="form-control mb-3">
+            <!-- short news by highest view -->
+            <div class="d-flex align-items-center">
+                <p class="pe-2">Sort By View:</p>
+                <p><select class="form-select form-select-sm" aria-label=".form-select-sm example" disabled>
+                        <option selected>Default</option>
+                    </select></p>
+            </div>
             <!-- load individual categorie's all news -->
-            <div id="individualCategorie" class="card border border-0" data-bs-toggle="modal"
+            <div id="individualCategorie" class="card border border-0 container" data-bs-toggle="modal"
                 data-bs-target="#detailInfoModal">
             </div>
             <!-- Modal -->

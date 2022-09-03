@@ -12,7 +12,7 @@ const displayAllNewsCategories = categories => {
     const newsCategoriesContainer = document.getElementById('newsCategories');
     categories.forEach(categorie => {
         const singleCategorie = document.createElement('small');
-        /* start loader */
+        /********start loader*******/
         singleCategorie.innerHTML = `
         <div class="hoover p-1" onclick="loadIndividualCategory('${categorie.category_id}'),toggleSpinner(true)">${categorie.category_name}</div>
     `
@@ -32,19 +32,22 @@ const loadIndividualCategory = (id) => {
 }
 const displayIndividualCategory = categories => {
     console.log(categories)
-    /* show total items of a categorie */
+    /**************show total items of a categorie**********/
     const formControl = document.getElementById('inputField')
     formControl.value = `Total ${categories.length} items found`
 
-    /* show alert if any category has no data */
+    /*************show alert if any category has no data***********/
     if (categories.length === 0) { alert('No data Available'); }
 
-    /* show all news of a category */
+    /*************short news by total view***********/
+    categories.sort(function (b, a) { return a.total_view - b.total_view });
+
+    /***********show all news of a category**********/
     const individualCategorieContainer = document.getElementById('individualCategorie');
     individualCategorieContainer.innerHTML = '';
     categories.forEach(categorie => {
-        console.log(categorie)
         const individualCategorieDiv = document.createElement('div');
+        /**********div with optional chaining**********/
         individualCategorieDiv.innerHTML = `
         <div class="row" onclick="loadNewsDetail('${categorie._id}')">
             <div class="border rounded mb-3 pt-3 pb-3 d-flex shadow">
@@ -52,7 +55,7 @@ const displayIndividualCategory = categories => {
                     <img src="${categorie.image_url}" class="img-fluid h-100 rounded" alt="..">
                 </div>
                 <div class="col-md-9 col-7 ps-4">
-                    <div class="card-body ">
+                    <div class="card-body p-0">
                         <h5 class="card-title">${categorie.title}</h5>
                         <p class="card-text overflow">${categorie.details}</p> 
                         <div class="mt-5 d-flex align-items-center justify-content-between justify-content-center">
@@ -62,7 +65,7 @@ const displayIndividualCategory = categories => {
                                     <p class="text-capitalize">${categorie.author.name ? categorie.author.name : 'Unknown'}</p>
                                 </div>    
                             </div>
-                            <div class="ps-3">
+                            <div class="ps-3 pe-3">
                                 <i class="fa-regular fa-eye"></i>
                                 <p>${categorie.total_view ? categorie.total_view : '0'}</p>
                             </div>
@@ -74,7 +77,7 @@ const displayIndividualCategory = categories => {
         `
         individualCategorieContainer.appendChild(individualCategorieDiv);
     })
-    /* stop loader */
+    /*******stop loader********/
     toggleSpinner(false);
 }
 
@@ -89,7 +92,6 @@ const loadNewsDetail = (_id) => {
 }
 const displayNewsDetails = categories => {
     console.log(categories)
-
     categories.forEach(categorie => {
         const modaltitle = document.getElementById('detailInfoModalLabel')
         modaltitle.innerHTML = `${categorie.title}`
