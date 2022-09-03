@@ -35,13 +35,22 @@ const displayIndividualCategory = categories => {
         individualCategorieDiv.innerHTML = `
         <div class="row">
             <div class="border rounded mb-3 pt-2 pb-2 d-flex shadow">
-                <div class="col-md-3">
-                    <img src="${categorie.thumbnail_url}" class="img-fluid" alt="..">
+                <div class="col-md-3 col-5">
+                    <img src="${categorie.image_url}" class="img-fluid h-100 rounded" alt="..">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-7">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">${categorie.title}</h5>
+                        <p class="card-text overflow">${categorie.details}</p> 
+                        <div class="bg-warning mt-5">
+                            <div style="height: 70px;">
+                                <img class ="img-fluid mh-100 rounded-circle" src="${categorie.author.img}">
+                            </div>
+                            <div>
+
+                            </div>
+                      
+                        </div>
                     </div>
                 </div>
             </div>

@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
     ">
     <style>
+        /* hover on news categories */
         .hoover:hover {
             background-color: lightblue;
             color: blueviolet;
             padding: 5px;
             border-radius: 7px;
+        }
+
+        /* news details overflow */
+        .overflow {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -55,7 +63,6 @@
             </div>
             <!-- load individual categorie -->
             <div id="individualCategorie" class="card border border-0">
-
             </div>
         </section>
     </main>
