@@ -8,7 +8,6 @@ const loadAllNewsCategories = () => {
 }
 
 const displayAllNewsCategories = categories => {
-    console.log(categories)
     const newsCategoriesContainer = document.getElementById('newsCategories');
     categories.forEach(categorie => {
         const singleCategorie = document.createElement('small');
@@ -23,7 +22,6 @@ const displayAllNewsCategories = categories => {
 /******************** display individual category's all news *********************/
 
 const loadIndividualCategory = (id) => {
-    console.log(id)
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     fetch(url)
         .then(res => res.json())
@@ -31,7 +29,6 @@ const loadIndividualCategory = (id) => {
         .catch(error => console.log(error))
 }
 const displayIndividualCategory = categories => {
-    console.log(categories)
     /**************show total items of a categorie**********/
     const formControl = document.getElementById('inputField')
     formControl.value = `Total ${categories.length} items found`
