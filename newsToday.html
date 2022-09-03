@@ -8,6 +8,14 @@
     <title>News Today</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
     ">
+    <style>
+        .hoover:hover {
+            background-color: lightblue;
+            color: blueviolet;
+            padding: 5px;
+            border-radius: 7px;
+        }
+    </style>
 </head>
 
 <body class="container">
@@ -16,7 +24,8 @@
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <div>
-                    <a class="navbar-brand" href="#"><span class="bg-primary border rounded p-2">News</span> Today</a>
+                    <a class="navbar-brand ms-5 me-5" href="#"><span class="bg-primary border rounded p-2">News</span>
+                        Today</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -41,7 +50,11 @@
     </header>
     <main>
         <section>
-            <div id="newsCategories" class="d-flex flex-row mb-3 justify-content-around flex-wrap">
+            <!-- load news categories -->
+            <div id="newsCategories" class="d-flex flex-row mb-3 justify-content-around flex-wrap p-1">
+            </div>
+            <!-- load individual categorie -->
+            <div id="individualCategorie" class="card border border-0">
 
             </div>
         </section>
